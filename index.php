@@ -1,11 +1,8 @@
 <?php
-include_once "system/libs/Main.php";
 include_once "system/libs/Controller.php";
 include_once "system/libs/View.php";
 
-$main = new Main();
-echo $main->whereMe();
-echo "<br>";
+
 $url = isset($_GET['url']) ? $_GET['url'] : NULL;
 $url = rtrim($url, '/');
 $url = explode('/', filter_var($url, FILTER_SANITIZE_URL));
@@ -21,6 +18,7 @@ if($url[0]) {
         $controller->$string($url[2]);
     } else {
         if(isset($url[1])){
+            $string = str_replace("", " ", $url[1]);
             $controller->$string();
         }
     }
