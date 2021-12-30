@@ -1,6 +1,8 @@
 <?php
 include_once "system/libs/Controller.php";
 include_once "system/libs/View.php";
+include_once "system/libs/Database.php";
+include_once "system/libs/Model.php";
 
 
 $url = isset($_GET['url']) ? $_GET['url'] : NULL;

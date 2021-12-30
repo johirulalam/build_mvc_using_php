@@ -1,13 +1,12 @@
 <?php 
 
-class CategoryModel {
+class CategoryModel extends Model{
 
 	public function categoryList() {
-		return array(
-		'catOne' =>   'education',
-		'catTwo' =>   'Sports',
-		'catThree' => 'Health'
-		);
+		$sql = "select * from category";
+		$query = $this->db->query($sql);
+		$result = $query->fetchAll();
+		return $result;
 	}
 }
 

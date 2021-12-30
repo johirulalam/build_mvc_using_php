@@ -12,7 +12,7 @@ class IndexController extends Controller{
     public function category() {
         $data = [];
         $categoryModel = $this->viewPage->Model("CategoryModel");
-        $data['categories'] = $categoryModel->categoryList();
+        $data['category'] = $categoryModel->categoryList();
         $this->viewPage->view('category', $data);
     }
 }
