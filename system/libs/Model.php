@@ -5,10 +5,12 @@ class Model extends Database{
 	protected $db = array();
 
 	public function __construct() {
-		$this->db = new Database();
+		$dsn  = 'mysql:dbname=mvc; host=localhost';
+		$user = 'root';
+		$pass = '';
+		$this->db = new Database($dsn, $user, $pass);
 	}
 }
-
 
 
  ?>
